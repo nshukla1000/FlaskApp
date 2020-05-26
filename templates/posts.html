@@ -5,6 +5,17 @@
 {% endblock%}
 {% block body %} 
 <H1> New Posts home page</H1>
+<hr>
+<h2> Create new Blog Post</h2>
+<form action='/posts', method='POST'>
+Title: <input type='text' name='title' id='title'><br>
+Author: <input type='text' name='author' id='author'><br>
+Post: <input type='textarea' name='content' id='content'><br>
+<input type='submit' value='POST'>
+</form>
+
+
+<hr>
 
 {% for post in posts %} 
 <h1>{{ post.title }}</h1>
