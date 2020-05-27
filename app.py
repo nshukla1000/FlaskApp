@@ -33,6 +33,18 @@ all_posts = [
 def index():
     return render_template("index.html")
 
+@app.route("/forms" , methods=['GET', 'POST'])
+def sums():
+    post_num1 = ''
+    post_num2 = ''
+    if request.method == "POST":
+        post_num1 = request.form["num1"]
+        post_num2 = request.form["num2"]
+        return render_template("forms.html", sum=post_num1 + post_num2)
+        # return redirect('/forms', sum=post_num1 + post_num2)
+    else:
+        return render_template("forms.html", sum=post_num1 + post_num2)
+
 @app.route("/posts", methods=['GET', 'POST'])
 def posts():
     if request.method == 'POST':

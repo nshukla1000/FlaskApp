@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Forms</title>
+{% endblock%}
+{% block body %} 
+<H1> Forms home page</H1>
+<hr>
+<form action='/forms', method='POST'>
+Num1: <input type='text' name='num1' id='num1'><br>
+Num2: <input type='text' name='num2' id='num2'><br>
+<input type='submit' value='POST'>
+</form>
+<hr>
+The sum is: {{sum}}
+<hr>
+{% endblock%} 
